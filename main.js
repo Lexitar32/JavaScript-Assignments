@@ -51,17 +51,18 @@ if (myOptions === 2) {
   // ENTER RECEIVERS NUMBER
   if (myNetworks >= 1) {
     let myNumber = prompt("Enter receiver mobile number");
-  }
-  // ENTER AMOUNT
-  if (myNetworks >= 1) {
-    let myAmount = prompt("Enter Amount");
 
-    // CONFIRM PAYMENT
-    if (myAmount = Number) {
-      let final = confirm("Are you sure you want to complete this transaction");
-      alert("Successful Subscription, Thanks!");
-    } else {
-      alert("Enter the correct amount");
+    // ENTER AMOUNT
+    if (myNumber >= 1) {
+      let myAmount = prompt("Enter Amount");
+
+      // CONFIRM PAYMENT
+      if (myAmount = Number) {
+        let final = confirm("Are you sure you want to complete this transaction");
+        alert("Successful Subscription, Thanks!");
+      } else {
+        alert("Enter the correct amount");
+      }
     }
   }
 }
