@@ -1,18 +1,3 @@
-// DAY 2
-// PROMPT VALUE
-/*let myName = prompt("Enter your name");
-
-let myNames = parseInt(myName);
-alert(typeof (myNames));
-
-if (myNames >= 100) {
-  alert("century or above a century");
-}
-
-let myInput = prompt("Enter a value");
-
-alert(myInput); */
-
 // DAY 3
 // IF-ELSE STATEMENT
 // AIRTIME-SELF, AIRTIME-OTHERS, DATA, TRANSFER
@@ -117,29 +102,3 @@ if (myOptions === 4) {
     }
   }
 }
-
-
-// DAY_4
-// let instruction =
-//   ` 1. Airtime-self
-//   2. Airtime - others
-//   3. Data `
-
-// prompt(instruction);
-
-// SWITCH CASE
-// let instruction = Number(prompt("1. Airtime-self \n 2. Airtime-others \n 3. Data"));
-
-// switch (instruction) {
-//   case 1:
-//     alert("You want to recharge yourself");
-//     break;
-//   case 2:
-//     alert("others");
-//     break;
-//   case 3:
-//     alert("Data");
-//     break;
-//   default:
-//     alert("Please enter a value within range");
-// }
