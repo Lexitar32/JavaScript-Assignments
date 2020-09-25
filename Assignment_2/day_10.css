@@ -1,0 +1,49 @@
+*,
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url(./main.jpg) no-repeat center center/cover;
+  height: 100vh;
+}
+
+/* Main Content */
+main {
+  background: linear-gradient(270deg, rgb(255, 245, 201) 0.14%, rgb(255, 197, 210) 100%);
+  margin: auto;
+  max-width: 60%;
+  padding: 50px 0px;
+}
+
+main .container {
+  margin: auto;
+  max-width: 40%;
+}
+
+main .container h2 {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+main .container form .form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+main .container form .form-content input {
+  margin: 10px;
+  padding: 10px;
+}
+
+main .container form .form-content .submit {
+  margin: 12px auto;
+  max-width: 50%;
+  padding: 12px;
+  border: none;
+  background: rgb(193, 49, 71);;
+  color: #ffffff;
+}
