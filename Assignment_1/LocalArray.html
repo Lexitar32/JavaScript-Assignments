@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        
+@import url('https://fonts.googleapis.com/css2?family=Kufam&display=swap');
+
+    html    {
+        box-sizing: border-box;
+        }
+
+    *,
+    *::before,
+    *::after {
+            box-sizing: inherit;
+            }
+
+
+        body{
+            font-family: 'Kufam', cursive;
+            background-image: linear-gradient(to right top, #61dcf8, #40c7f1, #1db1e8, #009bde, #0d85d1);
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        main {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+
+         main .form {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main .form .form-input {
+            width: 100%;
+        }
+
+        main .form .form-input input {
+            padding: .5rem;
+            margin: .5rem;
+            border-radius: 5px;
+            width: 100%;
+            border: none;
+        }
+
+        main .form .form-input button {
+    
+            width: 40%;
+            margin: 1rem auto;
+        }
+
+        .form-btn{
+            display: flex;
+        }
+
+
+#main {
+         
+            display: flex;
+            position: center;
+            justify-content: space-between;
+        }
+
+
+.object{
+        
+        border-radius: 40px;
+        background-color: #f5f4f4;
+        box-shadow: inset -6px -3px 5px rgba(255, 255, 255, 0.750601),
+        inset 3px 6px 6px #C3D7E7, 
+        inset 4px 2px 6px #B1C5D5, 
+        inset 0px 2px 4px #C8D4E2;
+        width: 50vh;
+        margin: 2rem 1rem;
+        overflow: hidden;
+        padding: 10px 0 10px;
+
+    }
+
+
+    .object img{
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        position: relative;
+        border-radius: 40px;
+        border: 2px solid  #0a6396;
+    }
+
+    .object-text{
+        padding-top: 10px;
+        line-height: normal;
+    }
+
+    .add-btn {
+        margin: 2rem;
+        background-color:#04b82b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 7px 7px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .up-btn{
+        margin: 2rem;
+        background-color:#643d02;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 7px 7px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .add-btn:hover{
+        background-color: #056d1c;
+    }
+
+    .up-btn:hover{
+        background-color: #a06206;
+    }
+
+    #delete-btn{
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 7px 7px;
+        font-weight: bold;
+        margin: 1rem 1rem;
+        
+    }
+
+    #delete-btn:hover{
+        background-color: #db2f2f;
+    }
+
+
+    #edit-btn{
+        background-color: #06771e;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 7px 7px;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        
+    }
+
+    
+    #edit-btn:hover{
+        background-color: #27ad10;
+    }
+
+
+         /* Media queries */
+         @media screen and (max-width: 768px) {
+            main .form {
+                width: 70%;
+            }
+
+            #main {
+                width: 70%;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            main .form {
+                width: 90%;
+            }
+
+            #main {
+                width: 90%;
+            }
+
+            .profile {
+                padding: 1.5rem;
+            }
+
+            .item {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <main>
+    <h2> Hey New User, wanna Sign Up?</h2>
+    <div class="form">
+        <div class= "form-input">
+        <input type="hidden" id="index" >
+        </div>
+        <div class= "form-input">
+        <input type="text" id="fullname" value="" placeholder="Full name">
+        </div>
+        <div class= "form-input">
+        <input type="text" id="email" placeholder="Email">
+        </div>
+        <div class= "form-input">
+        <input type="text" id="phone" placeholder="Phone">
+        </div>
+        <div class= "form-input">
+        <input type="text" id="pics" placeholder="Profile Picture">
+        </div>
+
+        <div class= "form-input">
+            <div class= "form-btn">
+                <button class="add-btn"> Add new user</button>
+                <button class="up-btn" onclick="Update()"> Update user record</button>
+            </div>
+        </div>
+        <div class= "form-input">
+            <input type="text" id= "finders" placeholder = "Search by name">
+            <button onclick="search()">Find one record</button>
+            <button onclick="searchAll()">Find all records</button>
+            <button onClick="searchPartMatch()">Find Part Record</button>
+        </div>
+    </div>
+    <h3>Users</h3>
+
+    <h3 id="recordFound"> </h3>
+    <div id= "Users">
+
+    </div>
+
+    <div id="main">
+        <!-- Where it all displays-->
+    </div>
+</main>
+
+    <script>
+
+        let i = 0;
+        // Getting Users from Storage
+        users =JSON.parse(localStorage.getItem("freshUsers"))
+
+       // Creating a new storage if none previously exists 
+    //    if(users == null){
+    //       users = [];
+
+    //    }
+
+       //Adding new user input via Click event
+       document.querySelector('.add-btn').addEventListener('click', () => {
+            newObject = {
+                "fullname": document.getElementById('fullname').value,
+                "email": document.getElementById('email').value,
+                "phone": document.getElementById('phone').value,
+                "pics": document.getElementById('pics').value
+            }
+            users.push(newObject)
+
+             // Then add it into the local storage
+             localStorage.setItem("freshUsers", JSON.stringify(users))
+
+             displayPeeps() //This function handles the display
+        })
+
+
+        // Creating the function that makes it display in HTML
+          function displayPeeps(){
+
+            userDisp ='';
+            for (i=0; i<users.length; i++){
+
+               userDisp += `
+        
+            <div class="object">
+            <img src= "${users[i].pics}"><br>
+            <div class="object-text">
+             <strong>Full Name</strong> : ${users[i].fullname}<br>
+            <strong>Email</strong> : ${users[i].email}<br>
+            <strong>Phone</strong> : ${users[i].phone}<br>
+            </div>
+            <button onClick="deleteUser(${i})" id="delete-btn">Delete</button>
+            <button id="edit-btn" onClick="triggerEdit(${i})">Edit</button>
+         </div>`
+            }
+            document.getElementById("main").innerHTML = userDisp;
+        }
+
+        displayPeeps()
+
+        //////////////////////////////////////////////////////
+
+
+         // Function to Delete Users
+         function deleteUser(id) {
+            con = confirm(`Are you sure you want to delete ${users[id].fullname}?`)
+            if (con == true) {
+                users.splice(id, 1);
+
+                //After deleting, you then need to set the updated array in the local storage!
+                localStorage.setItem("freshUsers", JSON.stringify(users))
+            }
+            displayPeeps()
+        }
+
+        ///////////////////////////////////////////////////
+      
+         // Function to Edit User Details
+        //Using Prompt
+
+         //NOTE: I need to find how to edit with Form and not Prompt.
+        //  function editUser(id) {
+        //     editUser = {
+        //         "fullname": prompt('Enter Your Full Name:', users[id].fullname),
+        //         "email": prompt('Enter Your Email Address:', users[id].email),
+        //         "phone": Number(prompt('Enter Your Phone Number:', users[id].phone)),
+        //         "pics": prompt('Enter Image url:', users[id].pics)
+        //     }
+        //     if (editUser.pics != null && editUser.fullname != null && editUser.email != null && editUser.phone != null) {
+        //         users[id] = editUser
+
+        //         localStorage.setItem("freshUsers", JSON.stringify(users))
+        //     }
+        //     displayPeeps()
+        // }
+
+
+         // Function to Edit User Details
+        //Using form fill HTML edit
+        
+    function triggerEdit(i){
+
+        userRecord = users[i]
+        document.getElementById("fullname").value = userRecord.fullname
+        document.getElementById("email").value = userRecord.email
+        document.getElementById("phone").value = userRecord.phone
+        document.getElementById("pics").value = userRecord.pics
+        document.getElementById("index").value = i
+    
+
+
+ }
+
+
+
+ //////////////////////////Updating the edited user ///////////////////
+ function Update(){
+     i = document.getElementById("index").value
+    
+    let updatedRecord = 
+           {    "fullname" :  document.getElementById("fullname").value,
+               "email" :  document.getElementById("email").value,
+               "phone" :  document.getElementById("phone").value,
+               "pics" :  document.getElementById("pics").value
+
+             }
+    users[i]= updatedRecord
+    localStorage.setItem("freshUsers", JSON.stringify(users))
+    displayPeeps()
+    
+
+ }
+
+
+ ///////////////////Searching for users ///////////////////
+ function search(){
+    param = document.getElementById("finders").value
+    userObject = users.find(x=>x.fullname==param)
+    if (userObject==undefined || userObject==null){
+        alert("No records found for " + param)
+    }
+    else {
+            users=[];
+            users.push(userObject)
+            document.getElementById("recordFound").innerHTML = users.length + " record found"  
+
+
+        //document.getElementById("recordFound").innerHTML = users.length + "records found"
+        displayPeeps()
+    }
+
+ }
+
+
+ function searchAll(){
+    param = document.getElementById("finders").value
+    users = users.filter(x=>x.fullname==param)
+    if (users==undefined || users==null){
+        alert("No records found")
+    }
+    else {
+        if(users.length > 1){
+        document.getElementById("recordFound").innerHTML = users.length + " records found"
+        }
+        else{
+        document.getElementById("recordFound").innerHTML = users.length + " record found"    
+        }
+        displayPeeps()
+    }
+
+ }
+
+
+ function searchAll(){
+    param = document.getElementById("finders").value
+    users = users.filter(x=>x.fullname==param)
+    if (users==undefined || users==null){
+        alert("No records found")
+    }
+    else {
+        if(users.length > 1){
+        document.getElementById("recordFound").innerHTML = users.length + "records found"
+        }
+        else{
+        document.getElementById("recordFound").innerHTML = users.length + " record found"    
+        }
+        displayPeeps()
+    }
+
+ }
+
+    </script>
+
+</body>
+</html>

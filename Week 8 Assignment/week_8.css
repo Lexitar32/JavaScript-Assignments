@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: url(../Assignment_1/main3.png) no-repeat center center/cover;
+}
+
+.header {
+  margin: auto;
+  max-width: 50%;
+}
+
+h2 {
+  text-align: center;
+  padding: 25px 0;
+}
+
+.header button {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+#myUsers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 30px auto;
+  max-width: 60%;
+  padding: 20px;
+}
+
+#myUsers > div {
+  padding: 30px;
+  border: 1px solid #ccc;
+  background: whitesmoke;
+  text-align: center;
+}
+
+#myUsers > div img {
+  border-radius: 50%;
+}
+
+#myUsers > div strong {
+  line-height: 1.8;
+}
+
+#myUsers > div button {
+  padding: 15px;
+  background: #0e2431;
+  color: white;
+  margin: 10px;
+}
