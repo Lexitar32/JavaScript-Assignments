@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Handling</title>
+  <style>
+    .errorMessage {
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="age" onblur="evaluateAge()">
+  <div id="errorMessage"></div>
+
+  <script>
+
+    function evaluateAge() {
+      age = Number(document.getElementById('age').value);
+
+      try {
+        if (age < 15) throw new Error("You need to grow up");
+        if (age > 40) throw "You are too old";
+      } catch (error) {
+        input = document.getElementById('age');
+        input.classList.add('errorMessage');
+        document.getElementById('errorMessage').innerHTML = error.stack;
+      }
+    }
+
+    // TYPES OF ERROR
+    /* Syntax Error
+    Eval Error
+    Type Error
+    Internal Error
+    Range Error
+    Reference Error
+    URL Error*/
+    // try {
+
+    // } catch (err) {
+    //   if (err instanceof ReferenceError) {
+
+    //   }
+    //   else if (err instanceof SyntaxError) {
+
+    //   }
+    //   else if (err instanceof RangeError) {
+
+    //   }
+    //   else {
+
+    //   }
+    // }
+  </script>
+
+</body>
+
+</html>

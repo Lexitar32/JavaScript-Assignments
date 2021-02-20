@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .bg {
+      width: 300px;
+      height: 300px;
+      background: lightpink;
+    }
+
+    img {
+      max-width: 150px;
+      max-height: 150px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="parentCont" ondrop="drop(event)" ondragover="dropAble(event)" class="bg"></div>
+  <p></p>
+  <p></p>
+
+  <img id="img1" src="./logo1.png" draggable="true" ondragstart="drag(event)" onclick="appendImage(event)">
+  <img id="img2" src="./logo2.png" draggable="true" ondragstart="drag(event)" onclick="appendImage(event)">
+
+  <script src="./dom_2.js"></script>
+</body>
+
+</html>

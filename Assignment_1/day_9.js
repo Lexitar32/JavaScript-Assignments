@@ -33,6 +33,7 @@ internalUsers[internalUsers.length] = {
   pics: 'tie.jpg'
 }
 
+// Getting Items from the local storage
 internalUsers = JSON.parse(localStorage.getItem('storeUsers'));
 if (internalUsers == null) {
   internalUsers = [];
@@ -114,7 +115,7 @@ function search() {
     internalUsers = [];
     internalUsers.push(usersObject);
 
-    localStorage.getItem('storeUsers', JSON.stringify(internalUsers));
+    // localStorage.seItem('storeUsers', JSON.stringify(internalUsers));
 
     mainDisplay();
   }
@@ -128,7 +129,7 @@ function searchAll() {
   } else {
     document.getElementById('recordFound').innerHTML = internalUsers.length + " records Found";
 
-    localStorage.getItem('storeUsers', JSON.stringify(internalUsers));
+    // localStorage.getItem('storeUsers', JSON.stringify(internalUsers));
 
     mainDisplay();
   }
@@ -136,15 +137,15 @@ function searchAll() {
 
 function searchPartMatch() {
   param = document.getElementById('searchItems').value;
-  internalUsers = internalUsers.filter(x => x.fullName.includes(param));
-  if (internalUsers == undefined || internalUsers == null) {
+  usersObject = internalUsers.filter(x => x.fullName.includes(param));
+  if (usersObject == undefined || usersObject == null) {
     alert(`No record found for ${param}`);
   } else {
     // internalUsers = [];
     // internalUsers.push(usersObject);
     document.getElementById('recordFound').innerHTML = internalUsers.length + " records Found";
 
-    localStorage.getItem('storeUsers', JSON.stringify(internalUsers));
+    // localStorage.getItem('storeUsers', JSON.stringify(internalUsers));
 
     mainDisplay();
   }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Message</title>
+
+  <style>
+    #errorMessage {
+      border: red 1px solid;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="errorMessage"></div>
+
+
+  <script>
+
+    // TRY-CATCH PRINCIPLE
+    try {
+      tiideLab();
+    } catch (error) {
+      document.getElementById('errorMessage').innerHTML = error.message;
+    } finally {
+      setTimeout(() => {
+        ele = document.getElementById('errorMessage');
+        ele.style.backgroundColor = "#fff";
+        ele.style.border = 'none';
+        ele.innerHTML = "";
+      }, 500);
+    }
+
+  </script>
+</body>
+
+</html>
